@@ -116,19 +116,6 @@
             }
         }
 
-        // Fonction qui renvoie la liste des utilisateurs
-        public function getUsers($bdd):array
-        {
-            try{
-                $req = $bdd->prepare('SELECT * FROM utilisateur;');
-                $req->execute();
-                return $req->fetchAll(PDO::FETCH_OBJ);
-            }
-            catch(Exception $e){
-                die('Erreur : '.$e->getMessage());
-            }
-        }
-
         // Fonction qui renvoie un utilisateur en fonction de son mail
         public function getUserByMail($bdd){
             try{
@@ -143,6 +130,6 @@
                 die('Erreur : '.$e->getMessage());
             }
         }
-
+        
     }
 ?>

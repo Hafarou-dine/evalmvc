@@ -1,7 +1,4 @@
 <?php
-    // ouverture de session 
-    session_start();
-
     /* --------------------------------- IMPORTS --------------------------------- */
     include './utils/connectBdd.php';
     include './model/model_util.php';
