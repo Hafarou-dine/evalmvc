@@ -1,0 +1,36 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h2{
+    margin-bottom: 10px;
+}
+
+h2, form{
+    margin-left: 15px;
+}
+
+form ~ p{
+    margin-left: 15px;
+}
+
+form > p{
+    margin-top: 10px;
+}
+
+input{
+    margin-top: -5px;
+    width: 400px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+input[type="submit"]{
+    margin-top: 10px;
+    width: 100px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
