@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./asset/style/style.css">
 </head>
 <body>
-    <h2>Ajouter un article </h2>
+    <h2>Ajouter un article</h2>
     <form action="" method="post">
         <p>Saisir le nom de l'article :</p>
         <input type="text" name="nom_article">
