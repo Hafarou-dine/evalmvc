@@ -10,6 +10,7 @@
 
 
     /* --------------------------------- LOGIQUE --------------------------------- */
+    // on verifie si les champs sont remplis
     if(isset($_POST['nom_article']) AND isset($_POST['prix_article']) AND 
     $_POST['nom_article'] != "" AND $_POST['prix_article'] !=""){
         //instancier un nouvel objet Article (appel au constructeur)
@@ -20,6 +21,7 @@
         echo '<p>L\'article '.$article->getNomArticle().' à été ajouté</p>';
     }
     else{
+        // sinon on affiche le message
         echo '<p>Veuillez remplir les champs du formulaire</p>';
     }
     // Import du footer

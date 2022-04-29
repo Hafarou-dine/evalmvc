@@ -10,7 +10,9 @@
 
     
     /* --------------------------------- LOGIQUE --------------------------------- */
-    $all = new Article(null, null); 
+    // on creer une nouvelle instance d'Article
+    $all = new Article(null, null);
+    // on recupére laliste de tous les articles en BDD 
     $data = $all->showAllArticle($bdd);
     foreach($data as $value){
         echo '<p><input type="checkbox" name="id[]" value="'.$value->id_article.'"><a href="/evalmvc/updateArticle?id='.$value->id_article.'">L\'article '.$value->nom_article.' a un prix égale à '.$value->prix_article.'€</a></p>';
