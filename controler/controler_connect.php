@@ -2,6 +2,7 @@
     /* --------------------------------- IMPORTS --------------------------------- */
     include './utils/connectBdd.php';
     include './model/model_util.php';
+    include './view/view_header.php';
     include './view/view_connect.php';
 
     
@@ -34,14 +35,12 @@
                 $_SESSION['mail_util'] = $util->getMail();
                 $_SESSION['mdp_util'] = $util->getMdp();
                 $_SESSION['connected'] = true;
-                // on affiche le message
-                echo "<p>Connecté</p>";
-                // on redirige vers la page liste des articles après 3s
+                // on redirige vers la page liste des articles après 0ms
                 echo '
                 <script>
                     setTimeout(()=>{
                         document.location.href="/evalmvc/showAllArticle";
-                    },3000);
+                    },0);
                 </script>';
             }
             else{

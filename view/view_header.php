@@ -11,16 +11,39 @@
     <header class="mb-2">
         <nav class="navbar navbar-expand-lg navbar-light bg-info">
             <div class="container-fluid">
-                <a class="navbar-brand fs-4" href="/evalmvc/showAllArticle">Site</a>
+                <?php
+                    $url = parse_url($_SERVER['REQUEST_URI']);
+                    if(isset($_SESSION['connected'])){  
+                        echo '<a class="navbar-brand fs-4" href="/evalmvc/showAllArticle">Site</a>';
+                    }
+                    else{
+                        echo '<a class="navbar-brand fs-4" href="/evalmvc">Site</a>';
+                    }
+                ?>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto">
-                        <a class="btn btn-primary me-3 px-3 py-2" href="/evalmvc/addArticle" role="button">Ajouter Article</a>
-                        <a class="btn btn-primary me-3 px-3 py-2" href="/evalmvc/showAllArticle" role="button">Afficher Articles</a>
-                        <a class="btn btn-primary me-5 px-3 py-2" href="/evalmvc/updateArticle" role="button">Modifier Article</a>
-                        <a class="btn btn-primary me-3 px-3 py-2" href="/evalmvc/deco" role="button">Deconnexion</a>
+                        <?php
+                            if(isset($_SESSION['connected'])){
+                                echo '
+                                <a class="btn btn-primary me-3 px-3 py-2" href="/evalmvc/addArticle" role="button">Ajouter Article</a>
+                                <a class="btn btn-primary me-3 px-3 py-2" href="/evalmvc/showAllArticle" role="button">Afficher Articles</a>
+                                <a class="btn btn-primary me-5 px-3 py-2" href="/evalmvc/updateArticle" role="button">Modifier Article</a>
+                                <a class="btn btn-primary me-3 px-3 py-2" href="/evalmvc/deco" role="button">Deconnexion</a>';
+                            }
+                            else{
+                                if($url['path'] === "/evalmvc/addUser"){
+                                    echo '
+                                    <a class="btn btn-primary me-3 px-3 py-2" href="/evalmvc/" role="button">Connexion</a>';
+                                }
+                                if($url['path'] === "/evalmvc/"){
+                                    echo '
+                                    <a class="btn btn-primary me-3 px-3 py-2" href="/evalmvc/addUser" role="button">Creer Compte</a>';
+                                }
+                            } 
+                        ?>
                     </div>
                 </div>
             </div>

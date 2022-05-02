@@ -1,25 +1,12 @@
 <?php
-// on verifie si un utilisateur est connecter
-    if(isset($_SESSION['connected'])){
-        // destruction de la session
-        session_destroy();
-        // on rediriige vers la page de connexion après 0ms
-        echo '
-        <script>
-            setTimeout(()=>{
-                document.location.href="/evalmvc/"; 
-            },0);
-        </script>';
+    // fermeture de la session
+    session_destroy();
+    // on verifie si le cookie de session existe 
+    if(isset($_COOKIE['PHPSESSID'])){
+        // suppression du cookie
+        unset($_COOKIE['PHPSESSID']);
     }
-    // sinon 
-    else{
-        // on rediriige vers la page de connexion après 0ms
-        echo '
-        <script>
-            setTimeout(()=>{
-                document.location.href="/evalmvc/"; 
-            },0);
-        </script>';
-    }
+    // on redirige vers la page de connexion
+    header('Location:/evalmvc/');  
 ?>
 

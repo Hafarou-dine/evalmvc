@@ -2,6 +2,7 @@
     /* --------------------------------- IMPORTS --------------------------------- */
     include './utils/connectBdd.php';
     include './model/model_util.php';
+    include './view/view_header.php';
     include './view/view_add_user.php';
 
 
