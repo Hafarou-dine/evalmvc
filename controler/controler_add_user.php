@@ -42,14 +42,14 @@
             </script>';
         }
         else{
-            // sinon le mail existe déjà e BDD, on affiche le message 
+            // sinon le mail existe déjà en BDD, on affiche le message 
             echo "<p>Création de compte impossible</p>";
         }
     }
     else{
         echo "<p>Veuillez remplir les champs du fomrmulaire</p>";
     }
-    // import du footer
+    // Import du footer
     include './view/view_footer.php';
 ?>
 
