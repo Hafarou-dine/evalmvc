@@ -35,12 +35,10 @@
                             }
                             else{
                                 if($url['path'] === "/evalmvc/addUser"){
-                                    echo '
-                                    <a class="btn btn-primary me-3 px-3 py-2" href="/evalmvc/" role="button">Connexion</a>';
+                                    echo '<a class="btn btn-primary me-3 px-3 py-2" href="/evalmvc/" role="button">Connexion</a>';
                                 }
                                 if($url['path'] === "/evalmvc/"){
-                                    echo '
-                                    <a class="btn btn-primary me-3 px-3 py-2" href="/evalmvc/addUser" role="button">Creer Compte</a>';
+                                    echo '<a class="btn btn-primary me-3 px-3 py-2" href="/evalmvc/addUser" role="button">Creer Compte</a>';
                                 }
                             } 
                         ?>
