@@ -22,8 +22,6 @@
             // le compte existe en BDD, on peut passer à la verification du mdp
             // on verifie si le mdp saisie correspond au mdp retourner par la BDD
             if(password_verify($mdp, $account->mdp_util)){
-                // on affiche le message
-                echo "<p>Connecté</p>";
                 // on set les valeurs de $account dans $util
                 $util->setId($account->id_util);
                 $util->setNom($account->nom_util);
@@ -36,6 +34,8 @@
                 $_SESSION['mail_util'] = $util->getMail();
                 $_SESSION['mdp_util'] = $util->getMdp();
                 $_SESSION['connected'] = true;
+                // on affiche le message
+                echo "<p>Connecté</p>";
                 // on redirige vers la page liste des articles après 3s
                 echo '
                 <script>
