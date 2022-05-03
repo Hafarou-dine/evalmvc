@@ -31,6 +31,10 @@
         case $path === "/evalmvc/updateArticle":
             include './controler/controler_update_article.php';
             break;
+        // route /evalmvc/showAllUser -> ./controler/controler_show_all_user.php
+        case $path === "/evalmvc/showAllUser":
+            include './controler/controler_show_all_user.php';
+            break;
         // route /evalmvc/deco -> ./controler/controler_deco.php
         case $path === "/evalmvc/deco":
             include './controler/controler_deco.php';

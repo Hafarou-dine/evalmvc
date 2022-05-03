@@ -13,8 +13,13 @@
             <div class="container-fluid">
                 <?php
                     $url = parse_url($_SERVER['REQUEST_URI']);
-                    if(isset($_SESSION['connected'])){  
-                        echo '<a class="navbar-brand fs-4" href="/evalmvc/showAllArticle">Site</a>';
+                    if(isset($_SESSION['connected'])){ 
+                        if(isset($_SESSION['id_admin'])){
+                            echo '<a class="navbar-brand fs-4" href="/evalmvc/showAllUser">Site</a>';
+                        }
+                        else{
+                            echo '<a class="navbar-brand fs-4" href="/evalmvc/showAllArticle">Site</a>';
+                        } 
                     }
                     else{
                         echo '<a class="navbar-brand fs-4" href="/evalmvc">Site</a>';
@@ -27,11 +32,17 @@
                     <div class="navbar-nav ms-auto">
                         <?php
                             if(isset($_SESSION['connected'])){
-                                echo '
-                                <a class="btn btn-primary me-3 px-3 py-2" href="/evalmvc/addArticle" role="button">Ajouter Article</a>
-                                <a class="btn btn-primary me-3 px-3 py-2" href="/evalmvc/showAllArticle" role="button">Afficher Articles</a>
-                                <a class="btn btn-primary me-5 px-3 py-2" href="/evalmvc/updateArticle" role="button">Modifier Article</a>
-                                <a class="btn btn-primary me-3 px-3 py-2" href="/evalmvc/deco" role="button">Deconnexion</a>';
+                                if(isset($_SESSION['id_admin'])){
+                                    echo '<a class="btn btn-primary me-3 px-3 py-2" href="/evalmvc/showAllUser" role="button">Afficher Utilisateurs</a>
+                                    <a class="btn btn-primary me-3 px-3 py-2" href="/evalmvc/deco" role="button">Deconnexion</a>';
+                                }
+                                else{
+                                    echo '
+                                    <a class="btn btn-primary me-3 px-3 py-2" href="/evalmvc/addArticle" role="button">Ajouter Article</a>
+                                    <a class="btn btn-primary me-3 px-3 py-2" href="/evalmvc/showAllArticle" role="button">Afficher Articles</a>
+                                    <a class="btn btn-primary me-5 px-3 py-2" href="/evalmvc/updateArticle" role="button">Modifier Article</a>
+                                    <a class="btn btn-primary me-3 px-3 py-2" href="/evalmvc/deco" role="button">Deconnexion</a>';
+                                }
                             }
                             else{
                                 if($url['path'] === "/evalmvc/addUser"){

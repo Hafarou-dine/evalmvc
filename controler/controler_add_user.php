@@ -2,6 +2,7 @@
     /* --------------------------------- IMPORTS --------------------------------- */
     include './utils/connectBdd.php';
     include './model/model_util.php';
+    include './model/model_admin.php';
     include './view/view_header.php';
     include './view/view_add_user.php';
 
@@ -15,9 +16,18 @@
         $prenom = $_POST['prenom_util'];
         $mail = $_POST['mail_util'];
         $mdp = $_POST['mdp_util'];
-        // creation d'une nouvelle instance d'Utilisateur
-        $newUtil = new Utilisateur();
-        // on set le mail saisie à l'instance d'Utilisateur $newUtil
+        // on verifie si la case admin est coché
+        if(isset($_POST['admin'])){
+            // on creer un compte administrateur
+            // creation d'une nouvelle instance d'Admin
+            $newUtil = new Admin();
+        }
+        else{
+            // sinon on creer un compte utilisateur
+            // creation d'une nouvelle instance d'Utilisateur
+            $newUtil = new Utilisateur();
+        } 
+        // on set le mail saisie à $newUtil
         $newUtil->setMail($mail);
         // on recherche l'utilisateur en fonction du mail saisie
         $compte = $newUtil->getUserByMail($bdd);

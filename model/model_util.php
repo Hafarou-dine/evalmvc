@@ -1,11 +1,11 @@
 <?php 
     class Utilisateur{
         /* ------------------------------ ATTRIBUTS ------------------------------ */
-        private $id;
-        private $nom;
-        private $prenom;
-        private $mail;
-        private $mdp;
+        protected $id;
+        protected $nom;
+        protected $prenom;
+        protected $mail;
+        protected $mdp;
         
 
         /* ------------------------------ CONSTRUCTEUR ------------------------------*/
@@ -133,3 +133,4 @@
         
     }
 ?>
+

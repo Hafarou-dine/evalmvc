@@ -31,9 +31,10 @@
         <p>Prenom :</p>
         <input type="text" name="prenom_util" required>
         <p>Mail :</p>
-        <input type="mail" name="mail_util" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required>
+        <input type="email" name="mail_util" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required>
         <p>Mot de passe :</p>
         <input type="password" name="mdp_util" required>
+        <p><input type="checkbox" name="admin">Admin</p>
         <p><input type="submit" value="Creer"></p>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

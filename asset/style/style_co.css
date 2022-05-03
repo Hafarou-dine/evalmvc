@@ -18,7 +18,7 @@ form > p{
     margin-top: 10px;
 }
 
-input{
+input[type="text"], input[type="email"], input[type="password"]{
     margin-top: -5px;
     width: 400px;
     padding: 5px;
@@ -34,3 +34,6 @@ input[type="submit"]{
     border-radius: 4px;
 }
 
+input[type="checkbox"]{
+    margin-right: 5px;
+}
